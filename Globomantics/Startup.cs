@@ -52,10 +52,10 @@ namespace Globomantics
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages(); 
+                //endpoints.MapRazorPages(); 
                 endpoints.MapControllerRoute(
                    name: "Default",
-                   pattern: "{Controller=Conference}/{action = Index}/ {Id?}"
+                   pattern: "{Controller=Conference}/{action=Index}/{id?}"
                     );
             });
         }
