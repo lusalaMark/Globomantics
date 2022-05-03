@@ -26,7 +26,7 @@ namespace Globomantics
         {
             services.AddRazorPages();
             services.AddControllersWithViews();
-            services.AddSingleton<IConferenceService, ConferenceMemoryService>();
+            services.AddSingleton<IConferenceService, ConferenceAPIService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,11 @@ namespace Globomantics
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapRazorPages(); 
+                endpoints.MapControllerRoute(
+                   name: "Default",
+                   pattern: "{Controller=Conference}/{action = Index}/ {Id?}"
+                    );
             });
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Globomantics.Services
 {
-    public class ConferenceAPI_Service : IConferenceService
+    public class ConferenceAPIService : IConferenceService
     {
     }
 }
