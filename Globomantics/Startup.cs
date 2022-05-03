@@ -1,3 +1,4 @@
+using Globomantics.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,7 @@ namespace Globomantics
         {
             services.AddRazorPages();
             services.AddControllersWithViews();
+            services.AddSingleton<IConferenceService, ConferenceMemoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
